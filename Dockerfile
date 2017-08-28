@@ -2,7 +2,7 @@ FROM jupyter/r-notebook:599db13f9123
 
 MAINTAINER Reem Almugbel <reem2@uw.edu>
 LABEL authors="Reem Almugbel, Abeer Almutairy"
-#USER root
+USER root
 
 # Customized using Jupyter Notebook R Stack https://github.com/jupyter/docker-stacks/tree/master/r-notebook
 
@@ -15,6 +15,8 @@ RUN apt-get update && \
     gcc && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
    
+
+RUN chown -R $NB_USER:users ./Data
 USER $NB_USER
 # R packages
 
