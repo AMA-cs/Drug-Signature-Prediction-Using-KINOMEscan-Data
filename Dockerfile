@@ -17,7 +17,7 @@ RUN apt-get update && \
    
 
 RUN chown -R $NB_USER:users ./Data
-USER $NB_USER
+#USER $NB_USER
 # R packages
 
 RUN conda config --add channels r
