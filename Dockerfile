@@ -97,4 +97,4 @@ RUN echo "source('http://bioconductor.org/biocLite.R'); biocLite('factoextra')" 
 
 WORKDIR /home/jovyan
 ADD . /home/jovyan
-RUN sudo chown -R $NB_USER:users ./Data
+RUN conda chown -R $NB_USER:users ./Data
