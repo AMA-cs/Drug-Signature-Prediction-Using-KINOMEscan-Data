@@ -2,9 +2,7 @@ FROM jupyter/r-notebook:599db13f9123
 
 MAINTAINER Reem Almugbel <reem2@uw.edu>
 LABEL authors="Reem Almugbel, Abeer Almutairy"
-#USER root
-#RUN chown -R $NB_USER:users ./Data
-USER $NB_USER
+USER root
 
 # Customized using Jupyter Notebook R Stack https://github.com/jupyter/docker-stacks/tree/master/r-notebook
 
@@ -19,7 +17,10 @@ RUN apt-get update && \
    
 
 #RUN chown -R $NB_USER:users ./Data
-#USER $NB_USER
+USER $NB_USER
+RUN chown -R $NB_USER:users ./Data
+RUN chown -R $NB_USER:users ./Data/KINOMEscan_Data
+RUN chown -R $NB_USER:users ./Data/KINOMEscan_Data/Datasets
 # R packages
 
 RUN conda config --add channels r
