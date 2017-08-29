@@ -97,3 +97,4 @@ RUN echo "source('http://bioconductor.org/biocLite.R'); biocLite('factoextra')" 
 
 WORKDIR /home/jovyan
 ADD . /home/jovyan
+RUN chown -R $NB_USER:users ./Data
