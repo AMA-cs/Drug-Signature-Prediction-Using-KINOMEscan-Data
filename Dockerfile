@@ -18,9 +18,10 @@ RUN apt-get update && \
 
 #RUN chown -R $NB_USER:users ./Data
 USER $NB_USER
-RUN chown -R $NB_USER:users ./Data
-RUN chown -R $NB_USER:users ./Data/KINOMEscan_Data
-RUN chown -R $NB_USER:users ./Data/KINOMEscan_Data/Datasets
+RUN chown -R $NB_USER:users /Data
+RUN chown -R $NB_USER:users /Data/KINOMEscan_Data
+RUN chown -R $NB_USER:users /Data/KINOMEscan_Data/Datasets
+#chown -R 1000:1000 /hello
 # R packages
 
 RUN conda config --add channels r
