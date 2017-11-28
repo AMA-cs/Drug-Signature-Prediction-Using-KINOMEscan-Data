@@ -24,7 +24,6 @@ USER $NB_USER
 #RUN chown -R $NB_USER:users ./Data/KINOMEscan_Data/Datasets
 
 # R packages
-RUN conda config --set auto_update_conda False
 RUN conda config --add channels r
 RUN conda config --add channels bioconda
 RUN conda install -c conda-forge jupyter_contrib_nbextensions
